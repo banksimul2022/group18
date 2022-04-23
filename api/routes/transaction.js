@@ -2,11 +2,11 @@ const express = require('express');
 const router = express.Router();
 const user = require('../models/transaction_model');
 
-router.get('/:id?',
+router.get('/:transaction?',
  function(request, response) {
-  if (request.params.user) {
+  if (request.params.transaction) {
     console.log('Käyttäjä antoi'+request)
-    user.getById(request.params.id, function(err, dbResult) {
+    user.getById(request.params.transaction, function(err, dbResult) {
       if (err) {
         response.json(err);
       } else {

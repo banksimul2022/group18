@@ -4,9 +4,10 @@ const card = require('../models/card_model');
 
 router.get('/:card?',
  function(request, response) {
+  console.log('Käyttäjä antoi'+request.params.card)
   if (request.params.card) {
-    console.log('Käyttäjä antoi'+request)
-    card.getById(request.params.id, function(err, dbResult) {
+    
+    card.getById(request.params.card, function(err, dbResult) {
       if (err) {
         response.json(err);
       } else {

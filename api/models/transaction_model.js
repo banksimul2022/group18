@@ -8,7 +8,7 @@ const transaction={
     return db.query('select * from transactions', callback);
   },
   getById: function(transaction, callback) {
-    return db.query('select * from transactions where account_numberID=?', [transaction.account_numberID], callback);
+    return db.query('select * from transactions where account_numberID=?', [transaction], callback);
   },
   add: function(transaction, callback) {
     db.query('insert into transactions (account_numberID, card_numberID, transactions_datetime, event, amount) values(?,?,now(),"deposit",?)', [transaction.account_numberID, transaction.card_numberID, transaction.customerID], callback);
