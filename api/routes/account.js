@@ -2,11 +2,11 @@ const express = require('express');
 const router = express.Router();
 const account = require('../models/account_model');
 
-router.get('/:id?',
+router.get('/:account?',
  function(request, response) {
-  if (request.params.account_numberID) {
+  if (request.params.account) {
     console.log('Käyttäjä antoi'+request)
-    account.getById(request.params.account_numberID, function(err, dbResult) {
+    account.getById(request.params.account, function(err, dbResult) {
       if (err) {
         response.json(err);
       } else {

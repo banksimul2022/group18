@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const cusAcc = require('../models/cusAcc_model');
 
-router.get('/:id?',
+router.get('/:cusAcc?',
  function(request, response) {
   if (request.params.cusAcc) {
     console.log('Käyttäjä antoi'+request)

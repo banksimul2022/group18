@@ -8,7 +8,7 @@ const cusAcc={
     return db.query('select * from customer_account', callback);
   },
   getById: function(cusAcc, callback) {
-    return db.query('select * from customer_account where account_numberID=?', [cusAcc.account_numberID], callback);
+    return db.query('select * from customer_account where customerID=?', [cusAcc], callback);
   },
   add: function(cusAcc, callback) {
       return db.query('insert into customer_account (account_numberID, customerID) values(?,?)', [cusAcc.account_numberID, cusAcc.customerID], callback);
