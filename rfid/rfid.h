@@ -11,11 +11,13 @@ class RFID_EXPORT Rfid: public QObject
     Q_OBJECT
 public:
     void huuhaa();
-    void openRfid();
+    //void openRfid();
     Rfid();
     ~Rfid();
-
+public slots:
+   void  openRfid();
 private:
+   short signal;
     QSerialPort * pQSerialPort;
 signals:
     void signaali(short);

@@ -27,3 +27,19 @@ win32: LIBS += -L$$PWD/../pinui/rfid/build/debug/ -lrfid
 
 INCLUDEPATH += $$PWD/../pinui/rfid
 DEPENDPATH += $$PWD/../pinui/rfid
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../rfid/build/release/ -lrfid
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../rfid/build/debug/ -lrfid
+
+INCLUDEPATH += $$PWD/../rfid/build/debug
+DEPENDPATH += $$PWD/../rfid/build/debug
+
+win32: LIBS += -L$$PWD/../rfid/build/debug/ -lrfid
+
+INCLUDEPATH += $$PWD/../rfid/build/debug
+DEPENDPATH += $$PWD/../rfid/build/debug
+
+win32: LIBS += -L$$PWD/../rfid/build/debug/ -lrfid
+
+INCLUDEPATH += $$PWD/../rfid/build/debug
+DEPENDPATH += $$PWD/../rfid/build/debug
