@@ -1,4 +1,5 @@
 QT       += core gui
+QT += serialport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -9,13 +10,16 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    bankwindow.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
+    bankwindow.h \
     mainwindow.h
 
 FORMS += \
+    bankwindow.ui \
     mainwindow.ui
 
 # Default rules for deployment.
@@ -23,23 +27,16 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-win32: LIBS += -L$$PWD/../pinui/rfid/build/debug/ -lrfid
 
-INCLUDEPATH += $$PWD/../pinui/rfid
-DEPENDPATH += $$PWD/../pinui/rfid
-
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../rfid/build/release/ -lrfid
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../rfid/build/debug/ -lrfid
-
-INCLUDEPATH += $$PWD/../rfid/build/debug
-DEPENDPATH += $$PWD/../rfid/build/debug
 
 win32: LIBS += -L$$PWD/../rfid/build/debug/ -lrfid
 
-INCLUDEPATH += $$PWD/../rfid/build/debug
-DEPENDPATH += $$PWD/../rfid/build/debug
+INCLUDEPATH += $$PWD/../rfid
+DEPENDPATH += $$PWD/../rfid
 
-win32: LIBS += -L$$PWD/../rfid/build/debug/ -lrfid
 
-INCLUDEPATH += $$PWD/../rfid/build/debug
-DEPENDPATH += $$PWD/../rfid/build/debug
+win32: LIBS += -L$$PWD/../pinui/build/debug/ -lpinui
+
+INCLUDEPATH += $$PWD/../pinui
+DEPENDPATH += $$PWD/../pinui
+

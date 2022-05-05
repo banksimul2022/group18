@@ -274,6 +274,7 @@ Makefile: ../rfidexe.pro ../../../../Qt/5.15.1/mingw81_32/mkspecs/win32-g++/qmak
 		../rfidexe.pro \
 		../../../../Qt/5.15.1/mingw81_32/lib/Qt5Widgets.prl \
 		../../../../Qt/5.15.1/mingw81_32/lib/Qt5Gui.prl \
+		../../../../Qt/5.15.1/mingw81_32/lib/Qt5SerialPort.prl \
 		../../../../Qt/5.15.1/mingw81_32/lib/Qt5Core.prl \
 		../../../../Qt/5.15.1/mingw81_32/lib/qtmain.prl \
 		../../../../Qt/5.15.1/mingw81_32/mkspecs/features/build_pass.prf
@@ -482,6 +483,7 @@ Makefile: ../rfidexe.pro ../../../../Qt/5.15.1/mingw81_32/mkspecs/win32-g++/qmak
 ../rfidexe.pro:
 ../../../../Qt/5.15.1/mingw81_32/lib/Qt5Widgets.prl:
 ../../../../Qt/5.15.1/mingw81_32/lib/Qt5Gui.prl:
+../../../../Qt/5.15.1/mingw81_32/lib/Qt5SerialPort.prl:
 ../../../../Qt/5.15.1/mingw81_32/lib/Qt5Core.prl:
 ../../../../Qt/5.15.1/mingw81_32/lib/qtmain.prl:
 ../../../../Qt/5.15.1/mingw81_32/mkspecs/features/build_pass.prf:

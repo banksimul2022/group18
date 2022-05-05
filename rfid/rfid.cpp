@@ -1,6 +1,6 @@
 #include "rfid.h"
 
-void Rfid::huuhaa()
+void Rfid::readCard()
 {
     qDebug("Lue kortti");
     //connect(pQSerialPort, SIGNAL(readyRead()),this, SLOT(openRfid()));
@@ -29,18 +29,6 @@ void Rfid::openRfid()
     QByteArray ID = pQSerialPort->readLine();
     qDebug() << "  Data -> " <<ID.data();
 
-        /*QByteArray readData = pQSerialPort->readAll();
-            while (pQSerialPort->waitForReadyRead(5000))
-                readData.append(pQSerialPort->readAll());
-
-            qDebug() << readData;*/
-
-
-        //StringID = QString(ID);
-        //qDebug() << "sama stringinä-> "<<StringID;
-    //StringID = QString(ID);
-    //qDebug() << "sama stringinä-> "<<StringID;
-    //emit signaali(55);
 }
 
 Rfid::Rfid()

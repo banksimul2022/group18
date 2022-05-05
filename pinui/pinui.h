@@ -14,10 +14,13 @@ class PINUI_EXPORT Pinui: public QObject
 public:
     Pinui(QObject * parent= nullptr);
     ~Pinui();
+
 signals:
     void sendNumberToExe(QString);
+
 public slots:
     void reseveNumber(QString);
+
 private:
     engine * Pengine;
 };

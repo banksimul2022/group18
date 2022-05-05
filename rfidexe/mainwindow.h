@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include "rfid.h"
+#include "pinui.h"
+#include "bankwindow.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -18,6 +20,7 @@ public:
 
 public slots:
     void vastaanOta(short luku);
+    void reseve(QString s);
 
 private slots:
     void on_pushButton_clicked();
@@ -25,5 +28,10 @@ private slots:
 private:
     Ui::MainWindow *ui;
     Rfid * pointteriRfid;
+    Pinui * pCheckPIN;
+    bankwindow * pbankMain;
+    QMap<short, QString> cards;
+    short readedCard;
+
 };
 #endif // MAINWINDOW_H

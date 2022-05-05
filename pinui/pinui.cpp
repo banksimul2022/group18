@@ -13,6 +13,7 @@ Pinui::Pinui(QObject *parent): QObject(parent)
 
 Pinui::~Pinui()
 {
+
     qDebug()<<"dlln destructorissa...";
 
 }
@@ -22,4 +23,5 @@ void Pinui::reseveNumber(QString s)
 {
      qDebug()<<"lähetetään singnaali exelle";
      emit sendNumberToExe(s);
+     Pengine->hide();
 }
