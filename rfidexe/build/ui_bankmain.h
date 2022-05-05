@@ -1,18 +1,16 @@
 /********************************************************************************
-** Form generated from reading UI file 'mainwindow.ui'
+** Form generated from reading UI file 'bankmain.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.15.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef UI_MAINWINDOW_H
-#define UI_MAINWINDOW_H
+#ifndef UI_BANKMAIN_H
+#define UI_BANKMAIN_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QLabel>
-#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -26,9 +24,6 @@ class Ui_MainWindow
 public:
     QWidget *centralwidget;
     QPushButton *pushButton;
-    QLineEdit *lineEdit;
-    QLabel *infoLabel;
-    QLabel *label;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -41,16 +36,7 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(150, 100, 75, 24));
-        lineEdit = new QLineEdit(centralwidget);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        lineEdit->setGeometry(QRect(130, 60, 113, 22));
-        infoLabel = new QLabel(centralwidget);
-        infoLabel->setObjectName(QString::fromUtf8("infoLabel"));
-        infoLabel->setGeometry(QRect(140, 140, 211, 31));
-        label = new QLabel(centralwidget);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(60, 60, 71, 21));
+        pushButton->setGeometry(QRect(170, 130, 80, 18));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -68,9 +54,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        pushButton->setText(QCoreApplication::translate("MainWindow", "lue kortti", nullptr));
-        infoLabel->setText(QString());
-        label->setText(QCoreApplication::translate("MainWindow", "Korttinumero:", nullptr));
+        pushButton->setText(QCoreApplication::translate("MainWindow", "Kirjaudu ulos", nullptr));
     } // retranslateUi
 
 };
@@ -81,4 +65,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // UI_MAINWINDOW_H
+#endif // UI_BANKMAIN_H
