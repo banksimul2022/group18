@@ -15,10 +15,10 @@ const transaction={
     return db.query('update account set account_balance=amount+account_balance where account_numberID=account_numberID');
   },
   delete: function(transaction, callback) {
-    return db.query('update transactions set amount=?, event=withrawal, account_numberID=?, card_numberID=?', [transaction.amount, transaction.account_numberID, transaction.card_numberID], callback);
+    return db.query('update transactions set account_balance=?, event=withrawal, account_numberID=?, card_numberID=?', [transaction.amount, transaction.account_numberID, transaction.card_numberID], callback);
   },
   update: function(transaction, callback) {
-    return db.query('update transactions set amount, customerID=? where account_numberID=?', [, transaction.customerID], callback);
+    return db.query('update transactions set amount=? where account_numberID=?', [transaction.amount, transaction.account_numberID, transaction.transactionID], callback);
   }
 };
           

@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const user = require('../models/user_model');
+//const basicAuth = require('express-basic-auth');
 
 router.get('/:user?',
  function(request, response) {
