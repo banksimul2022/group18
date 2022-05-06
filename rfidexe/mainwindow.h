@@ -21,6 +21,7 @@ public:
 public slots:
     void vastaanOta(short luku);
     void reseve(QString s);
+    void receiveBankClosedSignal();
 
 private slots:
     void on_pushButton_clicked();

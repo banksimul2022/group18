@@ -17,5 +17,6 @@ bankwindow::~bankwindow()
 void bankwindow::on_pushButton_clicked()
 {
     this->hide();
+    emit bankClosedSignal();
 }
 
