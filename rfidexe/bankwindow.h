@@ -15,6 +15,9 @@ public:
     explicit bankwindow(QWidget *parent = nullptr);
     ~bankwindow();
 
+signals:
+    void bankClosedSignal();
+
 private slots:
     void on_pushButton_clicked();
 

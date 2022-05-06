@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "bankwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -13,6 +14,11 @@ MainWindow::MainWindow(QWidget *parent)
     pointteriRfid=new Rfid;
     connect (pointteriRfid,SIGNAL(signaali(short)),
              this,SLOT(vastaanOta(short)));
+
+    pbankMain = new bankwindow(this);
+    connect (pbankMain,SIGNAL(bankClosedSignal()),
+            this,SLOT(receiveBankClosedSignal()));
+
 }
 
 MainWindow::~MainWindow()
@@ -61,7 +67,6 @@ void MainWindow::reseve(QString s)
 
         //uuden ikkunan aukaisu
         this->hide();
-        pbankMain = new bankwindow(this);
         pbankMain->show();
         //ui->infoLabel->setText("Oikea PIN");
     }
@@ -73,5 +78,12 @@ void MainWindow::reseve(QString s)
 void MainWindow::on_pushButton_clicked()
 {
     pointteriRfid->readCard();
+}
+
+void MainWindow::receiveBankClosedSignal()
+{
+    readedCard = -1;
+    ui->lineEdit->setText("");
+    this->show();
 }
 
